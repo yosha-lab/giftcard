@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kode Gift Card Gratis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #00ffcc;
+      font-family: 'Orbitron', monospace;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .box {
+      background: #111;
+      padding: 30px;
+      margin-top: 120px;
+      border: 2px solid #00ffcc;
+      display: inline-block;
+      box-shadow: 0 0 25px #00ffcc, inset 0 0 15px #00ffcc;
+      animation: glowBox 1.5s infinite alternate;
+    }
+
+    @keyframes glowBox {
+      from {
+        box-shadow: 0 0 10px #00ffcc;
+      }
+      to {
+        box-shadow: 0 0 30px #00ffcc, inset 0 0 20px #00ffcc;
+      }
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #00ffcc;
+      color: black;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 25px;
+      font-size: 18px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #00ffee;
+      transform: scale(1.1);
+    }
+
+    #loading {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #00ffee;
+      display: none;
+    }
+
+    #jumpscare {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 9999;
+      display: none;
+      animation: flash 0.5s ease-out;
+    }
+
+    @keyframes flash {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+
+    #jumpscare img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      animation: shake 0.2s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(2px, -2px); }
+      25% { transform: translate(-3px, 3px); }
+      50% { transform: translate(3px, -1px); }
+      75% { transform: translate(-2px, 2px); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Kode Gift Card 100.000</h1>
+    <p>Selamat! Kamu berhak klaim gift card sekarang juga.</p>
+    <button onclick="triggerJumpscare()">Klaim Kode</button>
+    <div id="loading">Mengambil kode...</div>
+  </div>
+
+  <div id="jumpscare">
+    <img src="kuntilanak.png" alt="BOOM">
+    <audio id="scream" autoplay>
+      <source src="scream.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function triggerJumpscare() {
+      document.getElementById("loading").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("jumpscare").style.display = "block";
+        document.getElementById("scream").play();
+      }, 3000); // delay 3 detik biar orang nunggu
+    }
+  </script>
+</body>
+</html>
